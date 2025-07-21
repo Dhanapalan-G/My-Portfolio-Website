@@ -68,18 +68,20 @@ const Contact = () => {
                           ? "noopener noreferrer"
                           : undefined
                       }
-                      className="flex items-center p-6 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl hover:border-slate-600 transition-all duration-300 group transform hover:-translate-y-1"
+                      className="flex flex-wrap sm:flex-nowrap items-start p-6 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl hover:border-slate-600 transition-all duration-300 group transform hover:-translate-y-1"
                     >
                       <div
-                        className={`p-4 rounded-xl  ${info.gradient}  mr-6 group-hover:scale-110 transition-transform duration-300`}
+                        className={`p-4 rounded-xl ${info.gradient} mr-4 group-hover:scale-110 transition-transform duration-300`}
                       >
                         <info.icon size={28} className={info.color} />
                       </div>
-                      <div>
+                      <div className="flex-1 min-w-0">
                         <h4 className="font-bold text-white text-lg mb-1">
                           {info.label}
                         </h4>
-                        <p className="text-slate-400">{info.value}</p>
+                        <p className="text-slate-400 break-words text-sm sm:text-base">
+                          {info.value}
+                        </p>
                       </div>
                     </a>
                   ))}

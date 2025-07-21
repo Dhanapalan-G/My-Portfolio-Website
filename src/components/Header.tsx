@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -14,13 +14,13 @@ const Header = () => {
     { name: "Skills", href: "#skills" },
     { name: "Education", href: "#education" },
     { name: "Contact", href: "#contact" },
-  ]
+  ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
-    element?.scrollIntoView({ behavior: "smooth" })
-    setIsMenuOpen(false)
-  }
+    const element = document.querySelector(href);
+    element?.scrollIntoView({ behavior: "smooth" });
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 backdrop-blur-md z-50 shadow-sm">
@@ -42,19 +42,23 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button
+            className="md:hidden text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
+
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4">
+          <div className="md:hidden mt-4 py-4 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 rounded-xl border border-white">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                className="block w-full text-left px-6 py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-700/50 transition-all duration-300"
               >
                 {item.name}
               </button>
@@ -63,7 +67,7 @@ const Header = () => {
         )}
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

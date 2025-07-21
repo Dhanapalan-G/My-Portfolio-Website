@@ -61,7 +61,7 @@ const Hero = () => {
           </div>
 
           <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 tracking-tight animate-fade-in-up">
-            Dhanapalan&nbsp;G
+            Dhanapalan G
           </h1>
 
           {/* typing animation */}
